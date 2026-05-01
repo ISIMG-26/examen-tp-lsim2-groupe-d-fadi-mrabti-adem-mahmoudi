@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS phone_occasion_db;
+USE phone_occasion_db;
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS produits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(150) NOT NULL,
+    description TEXT,
+    prix DECIMAL(10,2) NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    marque VARCHAR(100) NOT NULL,
+    etat VARCHAR(100) NOT NULL,
+    telephone VARCHAR(30) NOT NULL,
+    fichier VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

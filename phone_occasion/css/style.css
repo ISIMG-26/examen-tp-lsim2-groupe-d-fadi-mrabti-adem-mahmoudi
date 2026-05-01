@@ -1,0 +1,351 @@
+/* style general du site */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #eefcf8 0%, #f4f6f8 260px);
+    margin: 0;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* entete du site */
+header {
+    text-align: center;
+    padding: 34px 45px 28px;
+    background: linear-gradient(135deg, #0f766e, #2563eb);
+    color: white;
+    box-shadow: 0 4px 18px rgba(15, 118, 110, 0.18);
+}
+
+h1 {
+    margin: 0;
+    color: white;
+    font-size: 36px;
+}
+
+.intro {
+    margin: 8px 0 0;
+    color: #dffcf7;
+    font-size: 14px;
+}
+
+/* bouton du menu lateral */
+.menu-btn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 44px;
+    height: 38px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 30;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    background: #111827;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+/* menu de navigation */
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 65px 0 20px;
+    background: #111827;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-260px);
+    transition: 0.3s;
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+body.menu-open nav {
+    transform: translateX(0);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+nav a:hover {
+    color: #2dd4bf;
+    background: #1f2937;
+    text-decoration: none;
+}
+
+/* zone des filtres */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1050px;
+    margin: -18px auto 10px;
+    padding: 16px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    position: relative;
+    z-index: 2;
+}
+
+/* champs des formulaires */
+input, textarea, select {
+    width: 100%;
+    padding: 11px;
+    margin: 10px 0;
+    border-radius: 7px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.filters input,
+.filters select {
+    width: 230px;
+    margin: 0;
+    background: white;
+    border-color: #d1d5db;
+}
+
+/* bouton clear des filtres */
+.clear-filter {
+    width: auto;
+    margin: 0;
+    padding: 8px 14px;
+    background: #6b7280;
+    font-size: 13px;
+}
+
+.clear-filter:hover {
+    background: #4b5563;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #0f766e;
+    outline: none;
+    box-shadow: 0 0 5px rgba(15, 118, 110, 0.25);
+}
+
+/* contenu principal */
+main {
+    padding: 18px 20px 35px;
+    flex: 1;
+}
+
+/* liste des annonces */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+/* carte d'une annonce */
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px;
+    width: 235px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.14);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 7px;
+    background: #e5e7eb;
+}
+
+.card h3 {
+    color: #0f766e;
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.card p {
+    color: #4b5563;
+}
+
+.card .details {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.card span {
+    color: #16a34a;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0f766e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.card a:hover {
+    background: #ecfdf5;
+    text-decoration: none;
+}
+
+/* page details */
+.detail-card {
+    background: white;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 22px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.10);
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.detail-card img {
+    width: 330px;
+    max-width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+
+.detail-card h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.detail-card a {
+    display: inline-block;
+    color: #0f766e;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+/* message d'information dans details */
+.buy-info {
+    background: #ecfdf5;
+    color: #065f46;
+    padding: 10px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+/* formulaires */
+form {
+    background: white;
+    padding: 28px;
+    width: 360px;
+    max-width: calc(100% - 40px);
+    margin: 34px auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+}
+
+h2 {
+    text-align: center;
+    color: #0f766e;
+    margin-top: 25px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* bouton principal */
+button {
+    width: 100%;
+    background: #0f766e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #115e59;
+}
+
+/* pied de page */
+footer {
+    text-align: center;
+    background: #111827;
+    color: white;
+    padding: 15px;
+    margin-top: auto;
+}
+
+/* adaptation mobile */
+@media (max-width: 600px) {
+    header {
+        padding-left: 70px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .filters input,
+    .filters select,
+    .clear-filter {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .detail-card {
+        display: block;
+    }
+}
+
+.menu-btn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 44px;
+    height: 38px;
+    background: white;
+    color: #111827;
+    padding: 8px;
+    z-index: 30;
+}
